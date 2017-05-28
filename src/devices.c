@@ -15,12 +15,19 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/*
+typedef struct mirisdr_device {
+    uint16_t            vid;
+    uint16_t            pid;
+    const char          *name;
+    const char          *manufacturer;
+    const char          *product;
+} mirisdr_device_t;
+*/
+// changed to have only RSP1 and RSP2
 static mirisdr_device_t mirisdr_devices[] = {
-    { 0x1df7, 0x2500, "Mirics MSi2500 default (e.g. VTX3D card)", "Mirics", "MSi2500"},
-    { 0x2040, 0xd300, "Hauppauge WinTV 133559 LF", "Hauppauge", "WinTV 133559 LF"},
-    { 0x07ca, 0x8591, "AverMedia A859 Pure DVBT", "AverTV", "A859 Pure DVBT"},
-    { 0x04bb, 0x0537, "IO-DATA GV-TV100 stick", "IO-DATA", "GV-TV100"},
-    { 0x0511, 0x0037, "Logitec LDT-1S310U/J", "Logitec", "LDT-1S310U/J"}
+    { 0x1df7, 0x2500, "RSP1", "SDRPlay", "RSP1"},
+    { 0x1df7, 0x3010, "RSP2", "SDRPlay", "RSP2"}
 };
 
 static mirisdr_device_t *mirisdr_device_get (uint16_t vid, uint16_t pid) {
